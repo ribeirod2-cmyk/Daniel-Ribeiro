@@ -1,0 +1,81 @@
+:: StoryTitle
+Daniel_Project_2
+
+
+:: StoryData
+{
+  "ifid": "A22C0DAC-DC5B-4113-816D-17B5007AE39C",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Entrance",
+  "zoom": 1
+}
+
+
+:: Correct Path 1 {"position":"1450,450","size":"100,100"}
+As you continue forward and follow the light, you find yourself in another highway. This time, the roof is far more raised. There's only one doorway in front of you, which the generous light stands in for you to come. However, there is a large vine that leads towards a hole to the outside. Do you want to (text-colour:white)[(if:(history: where its name contains "Failed Path 2")'s length is 0)[[[climb the vine->Failed Path 2]], or ]] (text-colour:#9ff8fe)[[[persist in your loyalty to the light?->Correct Path 2]]]
+
+
+:: Correct Path 2 {"position":"1600,425","size":"100,100"}
+The light shines brighter as you keep going forward. As you go through one last doorway, you are in what seems to be the last room of your journey.  In this massive chamber lies two paths for you. 
+
+(text-colour:#ebffff)[One is a large stairway with two pillars near it going up to a gate. The blue light awaits you, illuminating it to a point where you can't see what is behind it. You cannot wait to learn what treasure awaits you.] (text-colour:cyan)[[[You almost can't help but climb it...->Correct Path 3]]]
+
+(if:(history: where its name contains "Failed Path 3")'s length is 0)[...but there also lies one small doorway set to the side. Pitch black like the one at the beginning of your journey. Your urge to see that treasure is strong, but you still can't help but feel curious about (text-colour:white)[[[what is through that doorway.->Failed Path 3]]]]
+
+
+
+:: Correct Path 3 {"position":"1750,400","size":"100,100"}
+(text-colour:cyan)[As you make it through the final doorway to follow the light, it doesn't move. The light consumes you.
+
+There was no treasure. You feel a sharp pain through your whole body. (if:(history: where its name contains "Fail 1")'s length is 1)[Pain worse than fire.] (if:(history: where its name contains "Fail 2")'s length is 1)[Pain worse than breaking all your bones.] (if:(history: where its name contains "Fail 3")'s length is 1)[Pain worse than spikes impaling your entire body.]]
+
+As the light drains you of your essence, you are cursed with an illusion of what would have been your treasure. Gold as far as the eye can see. You were at peace.
+
+
+
+
+
+:: Entrance {"position":"1175,575","size":"100,100"}
+You are a wanderer who has found themself in front of some ancient ruins. You have nothing with you except your clothes, but you find yourself irresistably tempted to enter and explore it anyways. Do you wish to (text-colour:#cdfefe)[''[[go through the large doorway marking the entrance->Yes]]''](if:(history: where its name contains "Leave")'s length is 0)[, or(text-colour:white)[ [[''leave''->Leave]]]]?
+
+
+:: Fail 1 {"position":"1450,700","size":"100,100"}
+You go forward as you've given up on the treasure. The temperature rises as you approach the orange glow until it's too late to change your mind. You fall into a pit of fire and burn to a crisp.
+
+(text-colour:white)[[[Try again.->Entrance]]]
+
+
+:: Fail 2 {"position":"1600,725","size":"100,100"}
+You keep climbing as your interest in the treasure fades. As you get closer to the light of the outside sky, your climb is cut at the very end as a snake lunges at you. You lose your grip on the vine and plummet to the cold, hard stone of the temple's floor.
+
+(text-colour:white)[[[Try again.->Entrance]]]
+
+
+:: Fail 3 {"position":"1750,750","size":"100,100"}
+You step through the doorway, but don't feel the ground below your foot as you expect. You almost comedically fall into a pit of spikes. As you fall, (text-colour:cyan)[the light's angered yells are the last thing on your mind] before you are inevitably impaled.
+
+(text-colour:white)[[[Try again.->Entrance]]]
+
+
+:: Failed Path 1 {"position":"1450,575","size":"100,100"}
+You see less and less as you go through.(text-colour:#bdf2ff)[ A faint shimmer] follows, but you feel your interest in treasure fading as a morbid curiosity overwhelms you. Another faint glow comes into your view, this time orange. Do you really wish to (text-colour:white)[[[continue forward->Fail 1]]], or (text-colour:#bdf2ff)[[[go back towards the light you KNOW to trust.->Yes]]]
+
+
+:: Failed Path 2 {"position":"1600,575","size":"100,100"}
+You decided to climb up the vines. (text-colour:#9ff8fe)[The light frantically trails behind you, as if it was begging you to [[come back down->Correct Path 1]].] You stop, torn between continuing your search, or(text-colour:white)[ [[climbing the vine.->Fail 2]]]
+
+
+:: Failed Path 3 {"position":"1750,575","size":"100,100"}
+Curiosity got the best of you. You dashed towards the doorway, the light speeding behind in desperation. (text-colour:cyan)[As it does, you feel your mind filling with its cries to come back.] Do you (text-colour:cyan)[[[listen to its cries->Correct Path 2]]], or''(text-colour:white)[ [[continue forward?->Fail 3]]]''
+
+
+:: Leave {"position":"975,575","size":"100,100"}
+Are you sure you want to (seq-link:"(text-colour:white)[''leave?'']","~~leave?~~") Or do you want to (text-colour:#ebffff)[[[head towards the temple?->Entrance]]]
+
+
+
+:: Yes {"position":"1300,575","size":"100,100"}
+You march through the large doorway marking the crimson-colored temple's entrance, brushing through the vines that drape over it. 
+
+Before you are two doorways. One is pitch black, its darkness intimidating you. The other, however, leads to a hallway illuminated by a a faint blue light. (text-colour:cyan)[You don't know how you know this, but the light wishes to guide you towards treasure. Treasure beyond your wildest dreams.] Do you wish to (text-colour:#bdf2ff)[[[follow the light->Correct Path 1]]](if:(history: where its name contains "Failed Path 1")'s length is 0)[, or go against it and into the ''(text-colour:white)[[[dark path->Failed Path 1]]]'']?
